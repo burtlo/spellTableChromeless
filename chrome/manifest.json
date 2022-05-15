@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "SpellTableChromeless",
+  "description": "A Chrome extension to remove the chrome around SpellTable",
+  "version": "0.1",
+  "action": {
+    "default_icon": "icons/logo128.png",
+    "default_title": "SpellTableChromeless"
+  },
+  "icons": {
+    "48": "icons/logo48.png",
+    "128": "icons/logo128.png"
+  },
+  "content_security_policy": {
+    "script-src": "self",
+    "object-src": "self"
+  },
+  "content_scripts": [{
+    "js": ["content.js"],
+    "matches": ["https://spelltable.wizards.com/game/*"]
+  }],
+  "host_permissions": [
+    "https://spelltable.wizards.com/*"
+  ]
+}
