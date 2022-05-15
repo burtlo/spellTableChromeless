@@ -12,6 +12,7 @@ let playTableObserver = new MutationObserver(mutations => {
       if (addedNode.className === "flex w-full h-full") {
         console.log("Found a play table", addedNode);
         removePlayerBars();
+        removePlayerBarsInBeta();
         removeSidebar();
         removeCurrentTurnHighlightOnce();
         playTableObserver.disconnect();
@@ -30,6 +31,11 @@ function removePlayerBars() {
   Array.from(playerBars).forEach(playerBar => playerBar.remove());
 }
 
+function removePlayerBarsInBeta() {
+  console.log("Remove all player bars when on beta.spelltable.com")
+  let playerBars = document.getElementsByClassName("w-full px-2 py-1 flex items-center bg-black-50 hover:bg-black-75 transition-colors ease-in-out duration-200")
+  Array.from(playerBars).forEach(playerBar => playerBar.remove());
+}
 
 function removeSidebar() {
   console.log("Remove the sidebar")

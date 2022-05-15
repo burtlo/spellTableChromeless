@@ -17,9 +17,12 @@
   },
   "content_scripts": [{
     "js": ["content.js"],
-    "matches": ["https://spelltable.wizards.com/game/*"]
+    "matches": [
+      "https://spelltable.wizards.com/game/*",
+      "https://beta.spelltable.com/game/*" ]
   }],
   "host_permissions": [
-    "https://spelltable.wizards.com/*"
+    "https://spelltable.wizards.com/*",
+    "https://beta.spelltable.com/*"
   ]
 }
